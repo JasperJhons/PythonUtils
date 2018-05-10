@@ -1,6 +1,8 @@
 import os
-import requests
 from html.parser import HTMLParser
+
+import requests
+
 
 class MyHTMLParser(HTMLParser):
 
@@ -11,7 +13,7 @@ class MyHTMLParser(HTMLParser):
             self.version_list.append(data[:-1])
 
 
-request = requests.get('')
+request = requests.get('PLACE_YOUR_URL_HERE')
 parser = MyHTMLParser()
 parser.feed(request.text)
 version_list = parser.version_list[1:]
